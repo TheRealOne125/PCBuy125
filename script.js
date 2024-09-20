@@ -40,32 +40,3 @@ messageInput.addEventListener("input", function () {
     wordCountDisplay.style.color = "white"; // Default color
   }
 });
-
-// Form Submission Feedback
-const form = document.getElementById("contact-form");
-const formStatus = document.getElementById("form-status");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent default form submission
-
-  // Perform form submission using Fetch API
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-  })
-    .then(response => {
-      formStatus.textContent = "Your form has been submitted.";
-      formStatus.style.color = "green";
-      form.reset(); // Reset the form fields
-      wordCountDisplay.textContent = "0/1000 characters"; // Reset word count
-    })
-    .catch(error => {
-      formStatus.textContent = "An error occurred. Please try again.";
-      formStatus.style.color = "red";
-    });
-});
-
-function changeImage(newSrc) {
-  const mainImage = document.getElementById("main-image");
-  mainImage.src = newSrc;
-}
