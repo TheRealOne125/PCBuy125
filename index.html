@@ -132,7 +132,7 @@
   <!-- Contact Our Support Team Section -->
   <section class="contact-section">
     <h2>Contact Our Support Team</h2>
-    <form id="contact-form" action="https://submit-form.com/4Mn6yyKg0" method="POST">
+    <form id="contact-form" action="https://submit-form.com/1VbLL148x" method="POST">
       <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
       <div id="word-count">0/1000 characters</div>
       <button type="submit" class="submit-btn">Send Message</button>
@@ -141,48 +141,5 @@
   </section>
 
   <script src="script.js"></script>
-  <script>
-    // Initialize and add the map
-    function initMap() {
-      const storeLocation = { lat: -34.928042488761434, lng: 138.5973714523374 };
-
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 14,
-        center: storeLocation,
-        mapTypeControl: true,
-        streetViewControl: true,
-      });
-
-      const marker = new google.maps.Marker({
-        position: storeLocation,
-        map: map,
-        icon: {
-          url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-        }
-      });
-
-      const mapLink = document.createElement("div");
-      mapLink.innerHTML = '<a href="https://www.google.com/maps?q=' + storeLocation.lat + ',' + storeLocation.lng + '&z=15" target="_blank">View Larger Map</a>';
-      map.controls[google.maps.ControlPosition.BOTTOM_RIGHT].push(mapLink);
-    }
-
-    // Word Count Functionality
-    const messageInput = document.getElementById("message");
-    const wordCountDisplay = document.getElementById("word-count");
-
-    messageInput.addEventListener("input", () => {
-      const text = messageInput.value;
-      const wordCount = text.length; // Count characters
-      wordCountDisplay.textContent = `${wordCount}/1000 characters`;
-    });
-
-    // Handle form submission
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const status = document.getElementById('form-status');
-      status.textContent = 'Your form has been submitted.';
-    });
-  </script>
 </body>
 </html>
